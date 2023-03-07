@@ -1,0 +1,34 @@
+Punto N.1
+
+n1 = input("Introduce el valor dividendo al numro entero: ")
+n2 = input("Introduce el valor divisor entero: ")
+print('la divisionn de '+ n1 + " entre " +  n2 + " da un cociente de " + str(int(n1) // int(n2)) + " y un residuo de " + str(int(n1) % int(n2)))
+
+Punto N.2
+
+import math 
+from tabulate import tabulate 
+
+Peso= float(input("introduce tu peso en Kg:"))
+Altura= float(input("introduce tu altura cm:"))
+IMC = round(Peso/math.pow(Altura,2),1)
+print("Su IMC es de "+str(IMC))
+
+Punto N.3
+
+pre = float(input("Ingresa el valor del Producto con IVA:"))
+IVA = pre*0.19
+print("El Valor del  IVA del producto es:",IVA)
+pre_bruto = pre - IVA 
+print("El Valor bruto del producto es de:",pre_bruto)
+
+Punto N.4
+
+n1=int(input('ingrese la distancia recorrida (km):'))
+n2=int(input('ingrese el consumo del conbustible (L/100KM)anual :'))
+n3=int(input('ingrese el costo promedio del conbustible ($/L) :'))
+A=n1/n2
+B=A*n3
+print('Consumio estos litros de gasolina: ',A)
+print('en total pago: ',B)
+
