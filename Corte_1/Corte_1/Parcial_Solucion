@@ -1,0 +1,99 @@
+1. numero entre 2 y 8 dig si es 5 coloque salto.
+    y imprimir cuantos numeros son diferentes a 5 y cuales son 5 
+
+n=int(input('ingrese un numero: '))
+digit_equal=0
+digit_defferent =0
+while n!=0:
+    x=n//10
+    dig=n-(x*10)
+    n=x
+    if dig==5:
+        digit_equal+=1
+        print('salto')
+    else:
+        print(dig)
+        digit_defferent +=1
+print(f'iguales a 5 :{digit_equal}')
+print(f'iguales a 5 :{digit_defferent}')
+print(f'numero de digitos :{digit_equal+digit_defferent}')
+
+solucion:
+ingrese un numero: 124552
+2
+salto
+salto
+4
+2
+1
+iguales a 5 :2
+iguales a 5 :4
+numero de digitos :6
+
+2. serie fibonachi
+
+n=int(input('ingrese la cantidad de num: '))
+a=0
+b=1
+print(a)
+print(b)
+for i in range (n-2):
+    c=a+b
+    a=b
+    b=c
+    print(c)
+
+solucion:
+ingrese la cantidad de num: 8
+0
+1
+1
+2
+3
+5
+8
+13
+
+3. primos
+def primo():
+    num=int(input('ingrese la cantidad de num: '))
+    j=2
+    n=2
+    x=0
+    print('1')
+    while x <= (num-2) :
+        div=n%j
+        if div==0:
+            if n==j:
+                print(n, end=',')
+                x+=1
+            j=2
+            n+=1
+        else:
+            j=j+1
+if __name__ == '__main__':
+    primos()
+        
+solucion:
+ingrese la cantidad de num: 5
+1
+2,3,5,7,
+
+
+, end=',' esto es pa separarlos por ,
+
+
+4 menu
+
+import scratch_6
+
+def main():
+    opc=input('ingrese una opcion')
+    if opc=='1':
+        scratch_6.primos()
+    elif opc=='2':
+        ejercicio2.fibonachi()
+    elif opc=='3':
+        ejercicio1.digitos()    
+if __name__ == '__main__':
+    main()
