@@ -1,0 +1,16 @@
+n=input('ingrese un numero: ')
+dimension= len(n)
+contador=0
+if 2< dimension <8:
+    for i in n:             # si hay un str y un entero se hace= int(i) para que sean numeros, alrevez '5' para que sea palabra
+        if i=='5':
+            print('salto')
+            contador+=1
+        else:
+            print(i)
+else:
+    print('fuera de rango')
+
+print(f'numeros iguales a 5: {contador}')
+print(f'numeros diferentes a 5: {dimension-contador}')
+print(f'numeros diferentes a 5: {dimension}')
