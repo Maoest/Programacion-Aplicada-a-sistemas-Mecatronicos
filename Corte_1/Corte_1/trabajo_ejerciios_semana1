@@ -1,0 +1,34 @@
+1. Suma y resta de dos numeros
+
+A=int(input('ingrese un numero: '))
+B=int(input('ingrese otro numero: '))
+C=A+B
+D=A-B
+print('la suma de los dos numeros es:', C)
+print('y la resta de los dos numeros es:', D)
+
+2. Hipotenusa de un triangulo
+
+A=int(input('ingrese el numero del cateto opuesto: '))
+B=int(input('ingrese el numero del cateto adyacente: '))
+C=(A**2+B**2)**(1/2)
+print('la Hipotenusa del triangulo es:', C)
+
+3.Numero es pa o **impar**
+
+A=int(input('ingrese un numero: '))
+B=A%2
+if B == 0:
+  print('el numero es par')
+else:
+  print('el numero es impar')
+  
+4.Volumen de una esfera
+
+A=int(input('ingrese el radio de la esfera: '))
+pi=3.141592653589793 
+B=(4/3)*pi*A**3
+
+print('El volumen de la esfera es:',B)
+
+
