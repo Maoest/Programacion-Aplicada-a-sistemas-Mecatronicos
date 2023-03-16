@@ -1,0 +1,21 @@
+cadena='hola mund0'
+print(cadena[3])
+print(len(cadena))     #numero de letras que hay en la palabra, contanto espaci
+                        # o tamaño de la cadena de caracteres.
+
+# el texto y muestra paso por parso el texto.
+texto=''
+for i in cadena:
+    texto+=str(f'{i}')             # sacar el texto normal en lines (f'{i},')si colco linea separa por lineas
+print(texto)
+for i in cadena:                   # para hacer el paso a paso
+    texto+=str(f'{i}')
+    print(texto)
+
+# hacer lo mis,mo pero con while
+texto2=''
+contador=0
+while contador<len(cadena):
+    texto2 += str(f'{cadena[contador]},')
+    contador +=1
+print(texto2)
