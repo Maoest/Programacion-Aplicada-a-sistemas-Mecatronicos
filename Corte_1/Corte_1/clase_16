@@ -1,0 +1,28 @@
+clase
+
+def main(a,b,*args,**kwargs):
+    print(a)
+    print(b)
+    print(args)        #tupla, valores sobrantes
+    print(kwargs)      #toma valores ya identificados, diccionario
+
+if __name__ == "__main__":
+    main(1,2,3,3,3,5, j=20, m=10,p=21,k=30-24*3)
+    
+___________________________________________________________________________________________    
+    
+import random as r
+num=r.randint(10,20)
+print(num)                #sol un numero
+
+for i in range(5):          # 5 numeros o cuantos quiera
+    nume=r.randint(10,20)
+    print(nume)
+
+for i in range(0,5):
+    numero=r.randint(10,20)
+    real=round(r.uniform(10,20),3)    # round=redondear(flotante con 2)     r.uniform(inicio final)
+    letra=r.choice("murcielago")      # choise= solicita datos str de cadena establecida
+    print(nume,end=" ")
+    print(real,end=" ")
+    print(letra,'\n')
