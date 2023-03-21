@@ -1,0 +1,142 @@
+el .append
+milista=[]
+milista.append(7)   # añade en la ultima posicion de la lista
+milista.append(40)
+print(milista)
+### ejemplo
+milista=[]
+while 1:
+    opc=input('ingrese un dato:')
+    milista.append(opc)
+    print(milista)
+    
+#################################
+el .insert
+milista=[3,5,7]
+opc=int(input('ingrese un dato:'))
+inx=int(input('ingrese la posicion:'))
+milista.insert(inx,opc)
+print(milista)
+
+##################################
+el .clear  # orra toda la lista
+milista=[3,5,7]
+while 1:
+    opc=input('ingrese un dato:')
+    if opc == 'borrar':
+        milista.clear()
+        print(milista)
+    else:
+        inx=int(input('ingrese la posicion:'))
+        milista.insert(inx,opc)
+        print(milista)
+
+##################################
+el .remove   # elimina el que se le pide, el primero qeu encuentre
+milista=[3,5,7]
+while 1:
+    opc=input('ingrese un dato:')
+    if opc == 'borrar':
+        dato= int(input('cualdato quiere borrar?'))
+        milista.remove(dato)
+        print(milista)
+    else:
+        inx=int(input('ingrese la posicion:'))
+        milista.insert(inx,opc)
+        print(milista)
+        
+##################################
+el .index       # busca el primero de los qeu se le pidio
+     
+#####################################
+el.pop   #saca el numero de la lista, mas no la elimina
+
+###################################
+el min()     #busca el numero menor de la lista
+el max()     #Busca el numero mayor de la lista
+
+###################################
+el .count    #Cuenta cuantos numero son iguales
+el sum()     #Suma la lista
+
+###################################
+el .extend() #se juntan dos listas
+el <var> in <lista>  #busca en la lista si esta ese numero, te dice true o false
+
+##################################
+el .sort()       # organiza la lista de menor a mayor
+el .reverse()    # oraganiza de mayor a menor
+
+
+#############################################
+#############################################
+Codigo total
+
+milista=[3,5,7]
+listab=[2,2,2]
+opc=''
+while opc!='salir':
+    opc=input('ique desea hacer?:')
+    if opc == 'agregar':     # buscar es con el index
+        opc=int(input('ingrese el numero a añadir:'))
+        milista.append(opc)
+        print(milista)
+    elif opc == 'borrar':       # borrar con el
+        dato= int(input('cualdato quiere borrar?'))
+        milista.remove(dato)
+        print(milista)
+    elif opc == 'buscar':     # buscar es con el index
+        dato= int(input('cual dato quiere buscar?'))
+        p=milista.index(dato)
+        print(f'el indice es:',p)
+    elif opc == 'ingresarp':         # añadir
+        opc=int(input('ingrese el numero a añadir:'))
+        inx=int(input('ingrese la posicion:'))
+        milista.insert(inx,opc)
+        print(milista)
+    elif opc == 'sacar':
+        opc=int(input('ingrese la posicion del numero a sacar:'))
+        p=milista.pop(opc)
+        print('se saco la:',p)
+        print(milista)
+    elif opc=='comparar':
+        p=min(milista)
+        c=max(milista)
+        print('el numero menor es el:',p,'y el numero mayor es el:',c)
+        print(milista)
+    elif opc=='conteo':
+        opc=int(input('ingrese el numero a revisar:'))
+        p=milista.count(opc)
+        print(f'El numero {opc} se repite el numero {p} ves/veces')
+        print(milista)
+    elif opc=='sumar':
+        p=sum(milista)
+        print('la suma de la lista es:',p)
+        print(milista)
+    elif opc=='confirmacion':
+        opc=int(input('ingrese el numero a confirmar en la lista:'))
+        p= opc in milista
+        print('si es true si esta, si es false no esta:',p)
+        print(milista)
+    elif opc == 'extender':
+        milista.extend(listab)
+        print(milista)
+    elif opc=='organizar':
+        opc=input('ingrese si la quiere de menor a mayor, o de mayor a menor: menor/mayor ')
+        if opc=='menor':
+            milista.sort()
+            print(milista)
+        elif opc=='mayor':
+            milista.reverse()
+            print(milista)
+    else:
+        print('no se que hacer')
+        a=input('desea salir? y/n')
+        if a=='y':
+            print('saliendo')
+
+
+
+
+
+    
