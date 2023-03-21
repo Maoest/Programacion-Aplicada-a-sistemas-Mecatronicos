@@ -1,0 +1,87 @@
+primer punto:
+la "libreria" (nunero_par) la puede encontar despues del codigo principal
+Codigo principal:
+import random as rand
+import numero_par
+
+
+def aleatorios():
+    i = 1
+    while i <= 10:
+        n = rand.randint(100, 120)
+        if n not in [110, 115, 119]:
+            if i % 2 != 0:
+                if numero_par.par(n, i):
+                    i += 1
+            else:
+                if numero_par.impar(n, i):
+                    i += 1
+aleatorios()
+
+Codigo de funciones utilizadas: 
+numero_par
+def par(n,i):
+    if n % 2 == 0:
+        print(f"El número {n} es par")
+        return True
+    return False
+
+def impar(n,i):
+    if n % 2 != 0:
+        print(f"El número {n} es impar")
+        return True
+    return False
+
+###########################################################################################################################
+    
+Segundo punto:    
+Codigo principal:
+import funciones
+
+print('hola, que funcion que realizar? para calcular el seno oprima 1, para el coseno 2, para la tangente 3 , para el exponencial 4 y para el logaritmo natural 5')
+fun=int(input('que funcion va usar?:'))
+var=float(input('ingrese el valor para calcular el resultado:'))
+if fun==1:
+    funciones.seno(var)
+elif fun==2:
+    funciones.cose(var)
+elif fun==3:
+    funciones.tangente(var)
+elif fun==4:
+    funciones.exponencial(var)
+elif fun==5:
+    funciones.logarirmo_natural(var)
+else:
+    print('el numero introducido no es aceptada')
+
+Codigo de funciones:
+import math
+
+def seno(var):
+    l=math.radians(var)
+    a=math.sin(l)
+    return print('el seno de',var,'es:',a)
+
+def cose(var):
+    l=math.radians(var)
+    a=math.cos(l)
+    return print('el coseno de',var,'es:',a)
+
+def tangente(var):
+    l=math.radians(var)
+    a=math.tan(l)
+    return print('la tangente de',var,'es:',a)
+
+def exponencial(var):
+    a=math.exp(var)
+    return print('la exponencial de',var,'es:',a)
+
+def logarirmo_natural(var):
+    a=math.log(var)
+    return print('el logaritmo natural de',var,'es:',a)
+    
+    
+    
+    
+    
+    
