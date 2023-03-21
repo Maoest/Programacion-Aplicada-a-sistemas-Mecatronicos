@@ -4,7 +4,6 @@ Codigo principal:
 import random as rand
 import numero_par
 
-
 def aleatorios():
     i = 1
     while i <= 10:
@@ -53,7 +52,6 @@ elif fun==5:
     funciones.logarirmo_natural(var)
 else:
     print('el numero introducido no es aceptada')
-
 Codigo de funciones:
 import math
 
