@@ -1,0 +1,66 @@
+# Diccionarios Bidimencionales
+def matrices(filas,columnas):
+    matriz=[]
+    for i in range(filas):
+        matriz.append([])
+        for j in range(columnas):
+            num=int(input(f'ingrese mel numero de la posicion [{i},{j}]:'))
+            matriz[i].append(num)
+            print(matriz)
+    return matriz
+matrices(3,2)
+##############################################
+
+import random as rand
+def matrices(filas,columnas):
+    matriz=[]
+    for i in range(filas):
+        matriz.append([])
+        for j in range(columnas):
+            num=rand.randint(1,10)
+            matriz[i].append(num)
+    return matriz
+
+def escalar(matriz,n):
+    for i in matriz:
+        for j in range(len(i)):
+           i[j] = n*i[j]
+    print(matriz)
+
+def app():
+    filas=int(input('ingrese el numero de filas: '))
+    columnas=int(input('ingrese el numero de columnas: '))
+    matriz = matrices(filas,columnas)
+    print(matriz)
+    n=int(input('ingrese un numero para escalar la matriz: '))
+    escalar(matriz,n)
+
+print(app())
+
+##############################################
+Recursion
+
+def imprimir(x):
+    if x>0:
+        imprimir(x-1)
+        print(x)
+    else:
+        print(f'finalizo {x} ')
+
+imprimir(5)
+###############################
+def impar(x):
+    if x<=0:
+        return 0
+    else:
+        num= (2*x-1) + impar(x-1)
+        return num
+def app():
+    n=int(input('ingrese cuantos numeros desea generar: '))
+    for i in range(n):
+        valor=impar(i)
+        print(valor,end=' ')
+
+print(app())
+
+
