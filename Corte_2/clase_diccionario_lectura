@@ -1,0 +1,23 @@
+def main():
+    f= open('matrizAsignacion.txt','rt')
+    matriz=f.readlines()
+    f.seek(0)
+    suma=0
+    for i in range(len(matriz)):
+        valor=f.readline().rstrip('\n').split(',')
+        print(valor)
+        suma+=int(valor[0])
+        print(suma)
+    print(suma)
+    f.close()
+
+###############################################
+
+datos={'nombre1':'Juan','nombre2':'Pedro'}
+print(datos ['nombre1'])
+print(datos['nombre2'])
+manuel=('edad':19,'doc':134255,'generto':'m')
+felipe=('edad':34,'doc':2939283,'generto':'m')
+nombre={1:'Mancera',2:'Felipe'}
+print(nombre[1])
+print(nombre[2]) 
