@@ -1,0 +1,77 @@
+# punto N.1=
+import random as rand
+def matrices(filas,columnas):
+    matriz=[]
+    for i in range(filas):
+        matriz.append([])
+        for j in range(columnas):
+            num=rand.randint(0,200)
+            matriz[i].append(num)
+    for fila in matriz:
+        print(fila)
+    return matriz
+
+def mayormenor(matriz):
+    dic={}
+    for i in matriz:
+        a = min(i)
+        dic[a]= (i,'posicion', i.index(a))
+        b = max(i)
+        dic[b]=(i,'posicion', i.index(b))
+    A = min(dic)
+    B = max(dic)
+    print('El numero menor de la matriz es: ',A,' y se encuntra en la fila:',dic[A],'posicion')
+    print('El numero mayor de la matriz es: ',B,' y se encuntra enla fila:',dic[B],'posicion')
+    arreglar(matriz)
+
+def arreglar(matriz):
+    arreglo = []
+    for fila in matriz:
+        arreglo.extend(fila)
+    arreglo.sort(reverse=True)
+    for i, fila in enumerate(matriz):
+        for j, _ in enumerate(fila):
+            matriz[i][j] = arreglo.pop(0)
+    for fila in matriz:
+        print(fila)
+
+
+def app():
+    filas=int(input('ingrese el numero de filas: '))
+    columnas=int(input('ingrese el numero de columnas: '))
+    matriz = matrices(filas,columnas)
+    mayormenor(matriz)
+print(app())
+
+
+# punto N.2=
+
+def imprimir(x,p,lol):
+    if x>0:
+        imprimir(x-1,p,lol)
+        print(x*p)
+        lol.append(x*p)
+        print(f'la suma del/los {x} numero/s es: {sum(lol)}')
+imprimir(5,2,[])
+
+# punto N.3=
+
+def primoR(n, D=2):
+    if n <= 1:
+        return False
+    elif n == 2 or D==n:
+        return True
+    elif n % D == 0:
+        return False
+    else:
+        return primoR(n, D+1)
+
+A=int(input('cuantos numero primos desea?: '))
+contador = 0
+num = 2
+
+while contador < A:
+    if primoR(num):
+        print(num)
+        contador += 1
+    num += 1
