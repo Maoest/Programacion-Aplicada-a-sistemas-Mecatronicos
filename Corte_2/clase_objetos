@@ -27,3 +27,66 @@ def main():
 
 if __name__=="__main__":
     main()
+
+
+# IMC
+class persona:
+    def __init__(self):
+        self.nombre=None
+        self.altura=None
+        self.peso=None
+    def Indice(self):
+        IMC=self.peso/(self.altura/100)**2
+        print(IMC)
+        if IMC<=18.5:
+            return str('por debajo')
+        elif IMC <=24.9:
+            return str('saludable')
+        elif IMC <=29.9:
+            return str('sobre peso')
+        elif IMC <=34.9:
+            return str('Obesidad I')
+        elif IMC <=39.9:
+            return str('Obesidad II')
+        else:
+            return str('Obesidad III')
+
+def main():
+    estudiante1 = persona()
+    estudiante1.nombre='Pedro Caceres'
+    estudiante1.altura= 1.81
+    estudiante1.peso= 97
+
+    estudiante2 = persona()
+    estudiante2.nombre='Maria perez'
+    estudiante2.altura= 160
+    estudiante2.peso= 47
+
+    estudiante3 = persona()
+    estudiante3.nombre='Julian Dominguez'
+    estudiante3.altura= 158
+    estudiante3.peso= 58
+
+    estudiante4 = persona()
+    estudiante4.nombre='Jesica Fuentes'
+    estudiante4.altura= 170
+    estudiante4.peso= 73
+
+    inge= persona()
+    inge.nombre='Mauricio Mora'
+    inge.altura=185
+    inge.peso=65
+
+    inge= persona()
+    inge.nombre='Santiago Blanco'
+    inge.altura=175
+    inge.peso=65
+
+    print(f'estudainte: {estudiante1.nombre} su resultado es: {estudiante1.Indice()}')
+    print(f'estudainte: {estudiante2.nombre} su resultado es: {estudiante2.Indice()}')
+    print(f'estudainte: {estudiante3.nombre} su resultado es: {estudiante3.Indice()}')
+    print(f'estudainte: {estudiante4.nombre} su resultado es: {estudiante4.Indice()}')
+    print(f'estudainte: {inge.nombre} su resultado es: {inge.Indice()}')
+
+if __name__=="__main__":
+    main()
