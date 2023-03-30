@@ -1,0 +1,29 @@
+# Constructos : def __init__(self,posibles_parametros de_inicializacion):
+class persona:
+    def __init__(self):
+        self.nombre=None
+        self.apellido=None
+        self.edad=None
+        self.frase=None
+
+    def hablar(self):
+        return self.frase
+
+def main():
+    profesor = persona()
+    profesor.nombre='Javier'
+    profesor.apellido='Gomez'
+    profesor.edad= 21
+    profesor.frase='Respete chino MK'
+
+    piloto = persona()
+    piloto.nombre='Santiago'
+    piloto.apellido='Perez'
+    piloto.edad= 32
+    piloto.frase='llegaremos a las 33 horas'
+
+    print(f'El profesor {profesor.nombre} dice: {profesor.hablar()}')
+    print(f'El piloto {piloto.nombre} dice: {piloto.hablar()}')
+
+if __name__=="__main__":
+    main()
