@@ -1,0 +1,75 @@
+
+############# Ejercicio N.1
+
+materias = {'estatica': {'dias': 'martes y jueves','hora': '9-11','profesor': 'Elmer Cepeda','salon': '306_DB'
+    },'programacion': {'dias': 'martes y jueves','hora': '1-3','profesor': 'David Torres','salon': '303_GO'
+    },'calculo_multi': {'dias': 'martes y jueves','hora': '3-5','profesor': 'Miller Palacios','salon': '306_DB'
+    },'electricidad_y_magnetismo': {'dias': 'miércoles y viernes','hora': '9-11','profesor': 'Oscar Mariño','salon': '406_DB'
+    },'circuitos_DC': {'dias': 'miércoles y viernes','hora': '1-3','profesor': 'Hernan Pineda','salon': '204_PS'
+    },'dibujo_maquinas': {'dias': 'miércoles','hora': '11-1','profesor': 'Elmer Cepeda','salon': '204_DS'
+    },'fundamentos_investigacion': {'dias': 'viernes','hora': '11-1','profesor': 'Julian Cortes','salon': '305_DB'
+}}
+
+horario = [
+    ['  MARTES        ', 'MIERCOLES                   ', 'JUEVES          ', 'VIERNES'],
+    ['estatica      ', 'electricidad_y_magnetismo   ', 'estatica        ', 'electricidad_y_magnetismo'],
+    ['libre         ', 'dibujo_maquinas             ', 'libre           ', 'fundamentos_investigacion'],
+    ['programacion  ', 'circuitos                   ', 'programacion    ', 'circuitos'],
+    ['calculo       ', 'libre                       ', 'calculo         ', 'libre']
+]
+for fila in horario:
+    for elemento in fila:
+        print(elemento, end=' ')
+    print()
+
+
+def buscar_materia(materia):
+    if materia in materias:
+        opc = input('¿De esta materia, quiere investigar algo en particular? si/no: ')
+        if opc == 'si':
+            opc2 = input('¿Qué desea investigar? dia/hora/profesor/salon: ')
+            if opc2 == 'dia':
+                print(f'El día o días de esta materia es: {materias[materia]["dias"]}')
+            elif opc2 == 'hora':
+                print(f'La hora de esta materia es: {materias[materia]["hora"]}')
+            elif opc2 == 'profesor':
+                print(f'El profesor de esta materia es: {materias[materia]["profesor"]}')
+            elif opc2 == 'salon':
+                print(f'El salón de esta materia es: {materias[materia]["salon"]}')
+        elif opc == 'no':
+            print(materias[materia])
+
+materia=input('ingrese la materia que quiere investigar: ')
+buscar_materia(materia)
+
+########## Ejercicio N.2
+
+import random
+import lol
+lis=[]
+for i in range(10):
+    lis.append(random.randint(1, 50))
+
+print(f'la lista es: {lis}')
+
+print(f'el numero mayor es: {lol.mayor(lis)}')
+print(f'el numero menor es: {lol.menor(lis)}')
+
+### funciones de otro archivo, archivo lol.py
+
+def mayor(lis):
+    m = lis[0]
+    for i in range(1,10):
+        if lis[i]>m:
+            m=lis[i]
+    return m
+
+def menor(lis,):
+    m = lis[0]
+    for i in range(1, 9):
+        if lis[i] < m:
+            m = lis[i]
+    return m
+
+
+
