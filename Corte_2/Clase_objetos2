@@ -1,0 +1,55 @@
+# IMC2     Como yo lo hice
+class persona:
+    def __init__(self):
+        self._nombre = None
+        self.altura = None
+        self.peso = None
+    # -------------- Getters --------------   # El que toma datos
+    def getNombre(self):
+        return self._nombre
+    def getAltura(self):
+        return self.altura
+    def getPeso(self):
+        return self.peso
+    # -------------- setters --------------   # El que modifica datos
+    def setNombre(self,nombre:str):
+         self._nombre = nombre
+    def setAltura(self,altura:int):
+        if altura < 40:
+            print('Error')
+        else:
+            self.altura = altura
+    def setPeso(self,peso:float):
+        self.peso = peso
+    # -------------- Metodo IMC -----------
+    def Indice(self):
+        IMC=self.peso/(self.altura/100)**2
+        print(IMC)
+        if IMC<=18.5:
+            return str('por debajo')
+        elif IMC <=24.9:
+            return str('saludable')
+        elif IMC <=29.9:
+            return str('sobre peso')
+        elif IMC <=34.9:
+            return str('Obesidad I')
+        elif IMC <=39.9:
+            return str('Obesidad II')
+        else:
+            return str('Obesidad III')
+
+def main():
+    while True:
+        var = input('Encuentre su IMC oprimiendo cualquier letra, si desea salir escriba "salir" : ')
+        if var != 'salir':
+            estudiante = persona()
+            estudiante.setNombre(str(input('Ingrese su nombre: ')))
+            estudiante.setAltura(int(input('Ingrese su altura: ')))
+            estudiante.setPeso(float(input('Ingrese su peso: ')))
+            print(f'Señor/a {estudiante.getNombre()} su resultado es: {estudiante.Indice()}')
+        else:
+            print('saliendo')
+            break
+if __name__=="__main__":
+    main()
+# el profesor lo tiene diferente si no estoy mal, buscar en el git de el
