@@ -1,0 +1,35 @@
+with open("C:/Users/Haydin/Documents/Alimentos.txt", "r") as archivo:    ### El users Haydin es porque me toco hacerlo en el compu de mi hermana.
+    reader = archivo.readlines()
+    data = list(reader)
+
+alimento = []
+contador = 0
+while True:
+    var = input('Ingrese el nombre del alimento, si desea salir escriba "salir": ')
+    if var != 'salir':
+        encontrar = False
+        for fila in data:
+            elementos = fila.strip().split(",")
+            if len(elementos) >= 2 and elementos[1].lower() == var.lower():
+                encontrar = True
+                alimento.append(fila.strip())
+                valor_ne = float(input('Ingrese el valor neto del producto: '))
+                if len(elementos) >= 2 and float(elementos[2]) > 0:
+                    iva = float(elementos[2])
+                    print(f'El IVA es de: {iva*100:.0f}%')
+                    valor_sin_iva = valor_ne / (1 + iva)
+                    print(f'El valor sin IVA es: {round(valor_sin_iva,2)}')
+                    valor_iva = valor_sin_iva * iva
+                    print(f'El valor del iva es: {round(valor_iva,2)}')
+                    print(f'EL valor neto del producto es: {valor_iva+valor_sin_iva}')
+                else:
+                    print(f'El producto no tiene IVA,el Valor a pagar es {valor_ne}')
+                break
+        if not encontrar:
+            print('Lo siento, no entendi lo que escribiste, escribelo nuevamente')
+            contador += 1
+            if contador >= 3:
+                print('Puede que lo que escribiste no este en la base de datos de alimentos que tenemos')
+                contador = 0
+    else:
+        break
