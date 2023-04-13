@@ -1,0 +1,79 @@
+###### Herencia
+
+class Deportista:
+    def __init__(self,nombre:str,documento:int,edad:int):
+        self.__nombre = nombre
+        self.__documento = documento
+        self.__edad = edad
+    # -------------- Getters --------------   # El que toma datos
+    def getNombre(self):
+        return self.__nombre
+    def getDocumento(self):
+        return self.__documento
+    def getEdad(self):
+        return self.__edad
+    # -------------- setters --------------   # El que modifica datos
+    def setNombre(self,nombre:str):
+         self.__nombre = nombre
+    def setDocumento(self,documento:int):
+         self.__documento = documento
+    def setEdad(self,edad:int):
+        self.__edad = edad
+
+class Deportista_Tenis(Deportista):
+    def __init__(self,nombre:str,documento:int,edad:int,setsganados:int,setsperdidos:int):
+        super().__init__(nombre,documento,edad)
+        self.__setsganados = setsganados
+        self.__setsperdidos = setsperdidos
+    # -------------- Getters --------------
+    def getSetsganados(self):
+        return self.__setsganados
+    def getSetsperdidos(self):
+        return self.__setsperdidos
+    # -------------- setters --------------
+    def setSetsganados(self,setsganados:int):
+         self.__setsganados = setsganados
+    def setSetsperdidos(self,setsperdidos:int):
+         self.__setsperdidos = setsperdidos
+
+class DeportistaBaloncesto(Deportista):
+    def __init__(self,nombre:str,documento:int,edad:int,cestas:int,nombreEquipo:int):
+        super().__init__(nombre,documento,edad)
+        self.__cestas = cestas
+        self.__nombreEquipo= nombreEquipo
+    # -------------- Getters --------------
+    def getCestas(self):
+        return self.__cestas
+    def getNombreEquipo(self):
+        return self.__nombreEquipo
+    # -------------- setters --------------
+    def setCestas(self,cestas:int):
+         self.__cestas = cestas
+    def setNombreEquipo(self,nombreEquipo:str):
+         self.__nombreEquipo = nombreEquipo
+
+class DeportistaFutbol(Deportista):
+    def __init__(self,nombre:str,documento:int,edad:int,golesAnotados:int,nombreEquipo:str):
+        super().__init__(nombre,documento,edad)
+        self.__golesAnotados = golesAnotados
+        self.__nombreEquipo = nombreEquipo
+    # -------------- Getters --------------   # El que toma dato
+    def getGolesAnotados(self):
+        return self.__golesAnotados
+    def getNombreEquipo(self):
+        return self.__nombreEquipo
+    # -------------- setters --------------   # El que modifica datos
+    def setGolesAnotados(self,golesAnotados:int):
+         self.__golesAnotados = golesAnotados
+    def setNombreEquipo(self,nombreEquipo:str):
+         self.__nombreEquipo = nombreEquipo
+
+def main():
+    futbolista = DeportistaFutbol('falcao',2415623,36, 54 , 'Colmbia')
+    print(f'Deportista: {futbolista.getNombre()} Documento: {futbolista.getDocumento()}'
+          f' Edad: {futbolista.getEdad()} Goles anotados: {futbolista.getGolesAnotados()}'
+          f' Equipo: {futbolista.getNombreEquipo()}')
+
+
+if __name__=="__main__":
+    main()
