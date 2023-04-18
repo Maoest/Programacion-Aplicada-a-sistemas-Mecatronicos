@@ -1,0 +1,67 @@
+#####  Diagrama de clases:
+
+    +---------------------+
+    |     Ciudadano       |
+    +---------------------+
+    | - __nombre: str     |
+    | - __cedula: str     |
+    | - __edad: int       |
+    +---------------------+
+    | + getNombre()       |
+    | + getCedula()       |
+    | + getEdad()         |
+    | + setNombre(nombre: str) : void |
+    | + setCedula(cedula: str) : void |
+    | + setEdad(edad: int) : void |
+    | + esMayorDeEdad() : str |
+    +---------------------+
+
+
+####### Codigo
+
+class Ciudadano():
+    def __init__(self):
+        self.__nombre = None
+        self.__cedula = None
+        self.__edad = None
+
+    def getNombre(self):
+        return self.__nombre
+    def getCedula(self):
+        return self.__cedula
+    def getEdad(self):
+        return self.__edad
+
+    def setNombre(self,nombre:str):
+         self.__nombre = nombre
+    def setCedula(self,cedula:str):
+        if 7 < len(cedula) < 11:
+            int(cedula)
+            self.__cedula = cedula
+        else:
+            print('la cedula no es valida' )
+    def setEdad(self,edad:int):
+        self.__edad = edad
+
+    def esMayorDeEdad(self):
+        edad=self.__edad
+        if edad < 18:
+            return str('Es menor de edad')
+        else:
+            return str('Es mayor de edad')
+
+def main():
+    while True:
+        var = input('Para iniciar oprima cualquier letra, si desea salir escriba "salir" : ')
+        if var != 'salir':
+            persona = Ciudadano()
+            persona.setNombre(str(input('Ingrese su Nombre: ')))
+            persona.setCedula(str(input('Ingrese su Cedula: ')))
+            persona.setEdad(int(input('Ingrese su Edad: ')))
+            print(f'Nombre: {persona.getNombre()} -Edad es: {persona.getEdad()}-CC: {persona.getCedula()} ')
+            print(f'{persona.esMayorDeEdad()}')
+        else:
+            print('saliendo')
+            break
+if __name__=="__main__":
+    main()
