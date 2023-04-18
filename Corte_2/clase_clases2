@@ -1,0 +1,97 @@
+class Ciudadano():
+    def __init__(self):
+        self.__idioma= None
+        self.__nombre= None
+
+    def getNombre(self):
+        return self.__nombre
+    def getIdioma(self):
+        return self.__idioma
+    # -------------- setters --------------   # El que modifica datos
+    def setNombre(self,nombre:str):
+         self.__nombre = nombre
+    def setIdioma(self,idioma:str):
+        self.__idioma = idioma
+    #------------------ sobrecarga de metodo -------
+    def saludo(self):
+        return "Quoi de beua!"
+
+
+class Colombia(Ciudadano):
+    def __init__(self):
+        super().__init__()
+        self.__CC = None
+    def getCC(self):
+        return self.__CC
+    def setCC(self,CC:int):
+        self.__CC = CC
+
+    def saludo(self):
+        return "Quibo parce"
+
+class Inglaterra(Ciudadano):
+    def __init__(self):
+        super().__init__()
+        self.__ID = None
+    def getID(self):
+        return self.__ID
+    def setID(self,ID:int):
+        self.__ID = ID
+
+    def saludo(self):
+        return "Helo my friend!"
+        
+class China(Ciudadano):
+    def __init__(self):
+        super().__init__()
+        self.__shengfenzheng = None
+    def getShengfenzheng(self):
+        return self.__shengfenzheng
+    def setShengfenzheng(self,shengfenzheng:int):
+        self.__shengfenzheng = shengfenzheng
+
+    def saludo(self):
+        return "NiGamMaYa!!"
+
+def darSaludo(obj):
+    obj.saludo()
+    return obj.saludo()
+
+def main():
+    Colombiano = Colombia()
+    Colombiano.setNombre('Kevin')
+    Colombiano.setIdioma('Español')
+    Colombiano.setCC(1231445)
+
+    Ingles = Inglaterra()
+    Ingles.setNombre('Richard')
+    Ingles.setIdioma('Inglish')
+    Ingles.setID(10349248)
+
+    Chino = China()
+    Chino.setNombre('Lui')
+    Chino.setIdioma('Mandarin')
+    Chino.setShengfenzheng(52141267484)
+
+    Ciudadano1= Ciudadano()
+    Ciudadano1.setNombre('Carla')
+    Ciudadano1.setIdioma('Frances')
+
+
+    print(f'Aplicante: {Colombiano.getNombre()} Idioma: {Colombiano.getIdioma()}\n'+\
+          f' CC: {Colombiano.getCC()} \n'+\
+          f'',darSaludo(Colombiano))
+
+    print(f'Aplicante: {Ingles.getNombre()} Idioma: {Ingles.getIdioma()}\n'+\
+          f' CC: {Ingles.getID()}\n'+\
+          f'',darSaludo(Ingles))
+
+    print(f'Aplicante: {Chino.getNombre()} Idioma: {Chino.getIdioma()}\n'+\
+          f' CC: {Chino.getShengfenzheng()}\n'+\
+          f'',darSaludo(Chino))
+
+    print(f'Aplicante: {Ciudadano1.getNombre()} Idioma: {Ciudadano1.getIdioma()}\n'+\
+          f'',darSaludo(Ciudadano1))
+
+if __name__=="__main__":
+    main()
