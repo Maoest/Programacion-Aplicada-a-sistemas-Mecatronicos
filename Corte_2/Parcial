@@ -1,0 +1,80 @@
+class Articulo():
+    def __init__(self):
+        self.__idArticulo= None
+        self.__precioBase= None
+        self.__unidExistencia= None
+
+    def getIdArticulo(self):
+        return self.__idArticulo
+    def getPrecioBase(self):
+        return self.__precioBase
+    def getUnidExistencia(self):
+        return self.__unidExistencia
+    # -------------- setters --------------   # El que modifica datos
+    def setIdArticulo(self,idArticulo:int):
+         self.__idArticulo = idArticulo
+    def setPrecioBase(self,precioBase:int):
+        self.__precioBase = precioBase
+    def setUnidExistencia(self,unidExistencia:int):
+        self.__unidExistencia = unidExistencia
+    #------------------ sobrecarga de metodo -------
+
+
+
+class Bebidas(Articulo):
+    def __init__(self):
+        super().__init__()
+        self.__cantUnidad = None
+        self.__proveedor = None
+        
+    def getCantUnidad(self):
+        return self.__cantUnidad
+    def getProveedor(self):
+        return self.__proveedor  
+    
+    def setCantUnidad(self,cantUnidad:int):
+        self.__cantUnidad = cantUnidad   
+    def setproveedor(self,proveedor:int):
+        self.__proveedor = proveedor
+
+
+
+class Lacteos(Articulo):
+    def __init__(self):
+        super().__init__()
+        self.__cantUnidad = None
+        self.__proveedor = None
+        
+    def getCantUnidad(self):
+        return self.__cantUnidad
+    def getProveedor(self):
+        return self.__proveedor  
+    
+    def setCantUnidad(self,cantUnidad:int):
+        self.__cantUnidad = cantUnidad   
+    def setproveedor(self,proveedor:int):
+        self.__proveedor = proveedor
+
+class Condimentos(Articulo):
+    def __init__(self):
+        super().__init__()
+        self.__cantUnidad = None
+        self.__proveedor = None
+        
+    def getCantUnidad(self):
+        return self.__cantUnidad
+    def getProveedor(self):
+        return self.__proveedor  
+    
+    def setCantUnidad(self,cantUnidad:int):
+        self.__cantUnidad = cantUnidad   
+    def setproveedor(self,proveedor:int):
+        self.__proveedor = proveedor
+
+
+
+def main():
+
+
+if __name__=="__main__":
+    main()
