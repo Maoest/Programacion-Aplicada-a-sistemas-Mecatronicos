@@ -1,0 +1,52 @@
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QCommandLinkButton
+from PyQt5 import uic
+
+class Principal(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.initGui()
+
+    def initGui(self):
+        uic.loadUi('Menu.ui', self)
+        self.show()
+
+        self.commandLinkButton_opcion1.clicked.connect(self.abrir_menu_opcion1)
+        self.commandLinkButton_opcion2.clicked.connect(self.abrir_menu_opcion2)
+        self.commandLinkButton_opcion3.clicked.connect(self.abrir_menu_opcion3)
+
+    def abrir_menu_opcion1(self):
+        self.close()
+        uic.loadUi('lista_campo1.ui', self)
+        self.show()
+        self.pushButton_salir.clicked.connect(self.salir)
+        self.pushButton_atras.clicked.connect(self.restaurar_ventana_principal)
+
+    def abrir_menu_opcion2(self):
+        self.close()
+        uic.loadUi('lista_campo2.ui', self)
+        self.show()
+        self.pushButton_salir.clicked.connect(self.salir)
+        self.pushButton_atras.clicked.connect(self.restaurar_ventana_principal)
+
+    def abrir_menu_opcion3(self):
+        self.close()
+        uic.loadUi('lista_campo3.ui', self)
+        self.show()
+        self.pushButton_salir.clicked.connect(self.salir)
+        self.pushButton_atras.clicked.connect(self.restaurar_ventana_principal)
+
+    def salir(self):
+        self.close()
+
+    def restaurar_ventana_principal(self):
+        self.close()
+        self.initGui()
+
+def main():
+    app = QApplication([])
+    window = Principal()
+    sys.exit(app.exec_())
+
+if __name__ == "__main__":
+    main()
