@@ -1,0 +1,41 @@
+import sys
+import PyQt5.QtWidgets as PyQT
+from PyQt5 import uic
+
+def h_decimal(hexadecimal):
+    h_dec = int(hexadecimal, 16)
+    return h_dec
+
+class principal(PyQT.QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.initGui()
+
+    def initGui(self):
+        uic.loadUi('XD.ui',self)
+        self.show()
+        self.pushButton.clicked.connect(lambda: self.calcular())
+
+    def calcular(self):
+        texto1=int(self.num1.text())
+        if self.dec2bin.isChecked()==True:
+            d_bin = bin(texto1)[2:]
+            self.resultado.setText(str(d_bin))
+        elif self.dec2hex.isChecked()==True:
+            d_hex=bin(texto1)[16:]
+            self.resultado.setText(str(d_hex))
+        elif self.bin2dec.isChecked()==True:
+            b_dec=b_decimal
+            self.resultado.setText(str(b_dec))
+        elif self.hex2dec.isChecked()==True:
+            numero_hexadecimal = texto1
+            decimal= h_decimal(numero_hexadecimal)
+            self.resultado.setText(str(decimal))
+
+def main():
+    app = PyQT.QApplication([])
+    window = principal()
+    sys.exit(app.exec_())
+
+if __name__ == "__main__":
+    main()
