@@ -1,0 +1,43 @@
+# Mauricio Esteban Mora Rueda y Santiago Blanco Peñuela
+# 30000089906                   30000088966
+
+import sys
+import PyQt5.QtWidgets as PyQT
+from PyQt5 import uic
+class principal(PyQT.QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.initGui()
+
+    def initGui(self):
+        uic.loadUi('XD.ui',self)
+        self.show()
+        self.pushButton.clicked.connect(lambda: self.calcular())
+
+    def calcular(self):
+        texto1=self.num1.text()
+        if self.dec2bin.isChecked()==True:
+            d_bin = bin(int(texto1))[2:]
+            self.resultado.setText(str(d_bin))
+        elif self.dec2hex.isChecked()==True:
+            hexadecimal = hex(int(texto1))[2:].upper()
+            self.resultado.setText(str(hexadecimal))
+        elif self.bin2dec.isChecked()==True:
+            numero_binario = texto1
+            decimal = int(numero_binario, 2)
+            self.resultado.setText(str(decimal))
+        elif self.hex2dec.isChecked()==True:
+            hexadecimal = texto1
+            decimal = int(hexadecimal, 16)
+            self.resultado.setText(str(decimal))
+
+def main():
+    app = PyQT.QApplication([])
+    window = principal()
+    sys.exit(app.exec_())
+
+if __name__ == "__main__":
+    main()
+
+# i love teacher
+# 我们想要它老师
